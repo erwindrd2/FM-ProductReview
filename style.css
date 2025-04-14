@@ -183,25 +183,34 @@ body {
 .btn {
     background-color: var(--color-light-green);
     color: var(--color-white);
-    padding: var(--space-32) var(--space-16);
+    padding: var(--space-16) var(--space-32);
     border-radius: 8px;
     display: block;
-
-    .btn:hover {
-        background-color: var(--color-dark-green);
-    }
+    text-align: center;
+    
+    
+  
 
 }
+
+
 
 .wrapper {
     display: grid;
     grid-template-columns: 1fr;
     background-color: var(--color-white);
+   
+   margin: auto auto;
     margin-top: 80px;
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
     width: 350px;
     border-radius: 8px;
+
+   @media (width>=calc(700 / 16 * 1rem)){
+    grid-template-columns: repeat(2, min(300px));
+    width: 600px;
+   
+  
+   }
 
 
     .image {
@@ -209,8 +218,28 @@ body {
         border-top-left-radius: 8px;
         height: 342px;
         margin-bottom: var(--space-32);
+       
+        @media (width>=calc(700 / 16 * 1rem)) {
+            height: 100%;
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 0px;
+           
     }
+}
 
+  
+.image1 {
+    @media (width<calc(700 /16 * 1rem)) {
+    display: none;
+    }
+}
+
+.image2 {
+    @media (width>=calc(700 / 16 * 1rem)){
+        display: none;
+    }
+}
+   
     .text {
         padding: var(--space-32);
     }
@@ -229,6 +258,12 @@ body {
     }
 
   
+    .prices {
+        display: flex;
+        margin-bottom: var(--space-24);
+        gap: var(--space-16);
+        align-items: center;
+    }
     .price {
 
         color: var(--color-light-green);
@@ -239,9 +274,34 @@ body {
         text-decoration: line-through;
     }
 
-          .prices {
-              display: flex;
-              flex-direction: row;
-          }
+    .shopicon {
+      display: inline;
+      margin-right: var(--space-8);
+      
+    }
+
+    a {
+        text-decoration: none;
+
+          
+    }
+a:hover {
+    background-color: var(--color-dark-green);
+}
+      
     
+}
+
+.attribution {
+    margin-top: 200px;
+    color: var(--color-grey);
+    a {
+        text-decoration: none;
+        color: var(--color-black);
+    }
+    a:hover {
+        border: 2px solid red;
+        font-size: 1.1rem;
+    }
+
 }
