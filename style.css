@@ -1,0 +1,243 @@
+@layer cssreset {
+/* css reset */
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+    }
+
+    p {
+        text-wrap: pretty;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-wrap: balance;
+    }
+}
+
+@layer colors {
+    :root {
+
+--color-black: hsl(212, 21%, 14%);
+--color-grey: hsl(228, 13%, 48%);
+--color-cream: hsl(30, 38%, 92%);
+--color-white: hsl(0, 0%, 100%);
+--color-light-green: hsl(158, 36%, 37%);
+--color-dark-green: hsl(158, 42%, 18%);
+
+
+    }
+}
+
+@layer fonts {
+    :root {
+
+        /* fraunces-regular - latin */
+            @font-face {
+                font-display: swap;
+                /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+                font-family: 'Fraunces';
+                font-style: normal;
+                font-weight: 400;
+                src: url('fonts/fraunces-v32-latin-regular.woff2') format('woff2');
+                /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+            }
+        
+            /* fraunces-700 - latin */
+            @font-face {
+                font-display: swap;
+                /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+                font-family: 'Fraunces';
+                font-style: normal;
+                font-weight: 700;
+                src: url('fonts/fraunces-v32-latin-700.woff2') format('woff2');
+                /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+            }
+                        /* montserrat-regular - latin */
+                        @font-face {
+                            font-display: swap;
+                            /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+                            font-family: 'Montserrat';
+                            font-style: normal;
+                            font-weight: 400;
+                            src: url('fonts/montserrat-v29-latin-regular.woff2') format('woff2');
+                            /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+                        }
+            
+                        /* montserrat-500 - latin */
+                        @font-face {
+                            font-display: swap;
+                            /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+                            font-family: 'Montserrat';
+                            font-style: normal;
+                            font-weight: 500;
+                            src: url('fonts/montserrat-v29-latin-500.woff2') format('woff2');
+                            /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+                        }
+            
+                        /* montserrat-700 - latin */
+                        @font-face {
+                            font-display: swap;
+                            /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+                            font-family: 'Montserrat';
+                            font-style: normal;
+                            font-weight: 700;
+                            src: url('fonts/montserrat-v29-latin-700.woff2') format('woff2');
+                            /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+                        }
+    }
+}
+
+@layer typography {
+    :root {
+
+        font-family: Montserrat, sans-serif;
+        font-weight: 500;
+        color: var(--color-black);
+        letter-spacing: 0px;;
+
+
+        .textpreset1 {
+            font-family: fraunces, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .textpreset2 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .textpreset3 {
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .textpreset4 {
+            font-size: 0.75rem;
+            line-height: 1.2;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--color-grey);
+        }
+
+        .textpreset5 {
+            font-size: 0.813rem;
+            line-height: 1.2;
+        }
+
+    }
+}
+
+@layer spacing {
+
+    :root {
+
+        --space-4: 0.25rem;
+        --space-8: 0.5rem;
+        --space-16: 1rem;
+        --space-24: 1.5rem;
+        --space-32: 2rem;
+        --space-40: 2.5rem;
+
+    }
+}
+
+body {
+    background-color: var(--color-cream);
+}
+
+.btn {
+    background-color: var(--color-light-green);
+    color: var(--color-white);
+    padding: var(--space-32) var(--space-16);
+    border-radius: 8px;
+    display: block;
+
+    .btn:hover {
+        background-color: var(--color-dark-green);
+    }
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--color-white);
+    margin-top: 80px;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    width: 350px;
+    border-radius: 8px;
+
+
+    .image {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        height: 342px;
+        margin-bottom: var(--space-32);
+    }
+
+    .text {
+        padding: var(--space-32);
+    }
+    .category {
+        margin-bottom: var(--space-24);
+
+    }
+
+    h1 {
+        margin-bottom: var(--space-24);
+    }
+
+    .description {
+        color: var(--color-grey);
+        margin-bottom: var(--space-24);
+    }
+
+  
+    .price {
+
+        color: var(--color-light-green);
+    }
+
+    .oldprice {
+        color: var(--color-grey);
+        text-decoration: line-through;
+    }
+
+          .prices {
+              display: flex;
+              flex-direction: row;
+          }
+    
+}
