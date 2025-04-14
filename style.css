@@ -295,6 +295,7 @@ a:hover {
 .attribution {
     margin-top: 200px;
     color: var(--color-grey);
+    text-align: center;
     a {
         text-decoration: none;
         color: var(--color-black);
